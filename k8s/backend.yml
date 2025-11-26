@@ -38,6 +38,11 @@ spec:
         - name: NODE_ENV
           value: "production"
         - name: MONGODB_URI
-          value: "mongodb://mongoadmin:mongo123@mongodb.chat-app.svc.cluster.local:27017/mydatabase?authSource=admin"
+          value: "mongodb://mongoadmin:mongo123@mongodb:27017/dbname?authSource=admin"
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: JWT_SECRET
         - name: PORT
-          value: "27017"
+          value: "5001"
