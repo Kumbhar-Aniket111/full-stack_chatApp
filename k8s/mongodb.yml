@@ -40,7 +40,10 @@ spec:
         - name: MONGO_INITDB_ROOT_USERNAME
           value: mongoadmin
         - name: MONGO_INITDB_ROOT_PASSWORD
-          value: mongo123
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: MONGO_INITDB_ROOT_PASSWORD
         volumeMounts:
         - name: mongo
           mountPath: /data/db
