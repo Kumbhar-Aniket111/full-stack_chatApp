@@ -3,9 +3,7 @@ name: PM Build Check
 on:
   push:
     branches:
-        - test
-    paths:
-      - "frontend/**"
+      - test
 
 jobs:
   build:
@@ -32,3 +30,4 @@ jobs:
       run: npm run build --if-present
 
     - run: npm test
+      working-directory: frontend
