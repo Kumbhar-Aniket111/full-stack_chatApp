@@ -4,8 +4,8 @@
 name: PR – NPM Build Check
 
 on:
-  pull_request:
-    branches: [ "main" ]
+  push:
+    branches: [ "test" ]
     paths:
       - "frontend/**"
 
