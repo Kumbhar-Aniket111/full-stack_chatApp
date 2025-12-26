@@ -51,7 +51,4 @@ jobs:
 
     - name: Install dependencies
       working-directory: backend
-      run: npm ci
-    - name: Build Backend
-      working-directory: backend
-      run: npm run build
+      run: npm ci --only=production
